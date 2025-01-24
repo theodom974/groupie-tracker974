@@ -342,15 +342,15 @@ func searchBar() SB{
 func searchBarCalculation(w http.ResponseWriter, r *http.Request) {
 	key := strings.ToLower(r.FormValue("data"))
 	copyArtist = nil
-	if strings.Contains(key, "artist/band") {
-		key = strings.Join(strings.Split(key, " - artist/band"),"")
+	if strings.Contains(key, "Artist/Groupe") {
+		key = strings.Join(strings.Split(key, " - Artist/Groupe"),"")
 		for i := 0; i < len(artist); i++ {
 			if key == strings.ToLower(artist[i].Name) {
 				copyArtist = append(copyArtist, artist[i])
 			}
 		}
-	} else if strings.Contains(key, "member") {
-		key = strings.Join(strings.Split(key, " - member"),"")
+	} else if strings.Contains(key, "Membre") {
+		key = strings.Join(strings.Split(key, " - Membre"),"")
 		for i := 0; i < len(artist); i++ {
 			for j := range artist[i].Members {
 				if key == strings.ToLower(artist[i].Members[j]) {
@@ -358,8 +358,8 @@ func searchBarCalculation(w http.ResponseWriter, r *http.Request) {
 				}
 			}
 		}
-	} else if strings.Contains(key, "location") {
-		key = strings.Join(strings.Split(key, " - location"),"")
+	} else if strings.Contains(key, "Localisation") {
+		key = strings.Join(strings.Split(key, " - Localisation"),"")
 		for i := 0; i < len(artist); i++ {
 			for j := range artist[i].Locations {
 				if key == strings.ToLower(artist[i].Locations[j]) {
@@ -367,15 +367,15 @@ func searchBarCalculation(w http.ResponseWriter, r *http.Request) {
 				}
 			}
 		}
-	} else if strings.Contains(key, "creation date") {
-		key = strings.Join(strings.Split(key, " - creation date"),"")
+	} else if strings.Contains(key, "Date de Création") {
+		key = strings.Join(strings.Split(key, " - Date de Création"),"")
 		for i := 0; i < len(artist); i++ {
 			if key == strconv.Itoa(artist[i].CreationDate) {
 				copyArtist = append(copyArtist, artist[i])
 			}
 		}
-	} else if strings.Contains(key, "first album date") {
-		key = strings.Join(strings.Split(key, " - first album date"),"")
+	} else if strings.Contains(key, "Premier Album") {
+		key = strings.Join(strings.Split(key, " - Premier Album"),"")
 		for i := 0; i < len(artist); i++ {
 			if key == artist[i].FirstAlbum {
 				copyArtist = append(copyArtist, artist[i])
