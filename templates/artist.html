@@ -21,23 +21,23 @@
 
         <div class="searchBar">
             <form method="get" action="/">
-                <input class="search" type="text" placeholder="Search..." id="data" name="data" list="data-list" autocomplete="off">
+                <input class="search" type="text" placeholder="recherche..." id="data" name="data" list="data-list" autocomplete="off">
                 <datalist id="data-list">
                     {{with .Search}}
                         {{range .ArtistBandName}}
-                            <option value="{{.}} - Artist/Band"></option>
+                            <option value="{{.}} - Artist/Groupe"></option>
                         {{end}}
                         {{range .Members}}
-                            <option value="{{.}} - Member"></option>
+                            <option value="{{.}} - Membre"></option>
                         {{end}}
                         {{range .Location}}
-                            <option value="{{.}} - Location"></option>
+                            <option value="{{.}} - Localisation"></option>
                         {{end}}
                         {{range .CreationDate}}
-                            <option value="{{.}} - Creation Date"></option>
+                            <option value="{{.}} - Date de Création"></option>
                         {{end}}
                         {{range .FirstAlbumDate}}
-                            <option value="{{.}} - First Album Date"></option>
+                            <option value="{{.}} - Premier Album"></option>
                         {{end}}
                     {{end}}
                 </datalist>
@@ -45,7 +45,7 @@
         </div>
 
         <div class="menu">
-            <a href="/">Home</a>
+            <a href="/">Menu</a>
         </div>
     </div>
 </nav>
@@ -57,17 +57,17 @@
 
 <div id="cont">
         <div class="middlebox">
-            <h2>Creation Date</h2>
+            <h2>Date de Création</h2>
             {{.Artist.CreationDate}}
         </div>
         <div class="separator"></div>
         <div class="middlebox">
-            <h2>First Album Date</h2>
+            <h2>Premier Album</h2>
             {{.Artist.FirstAlbum}}
         </div>
         <div class="separator"></div>
         <div class="middlebox">
-            <h2>Members</h2>
+            <h2>Membre</h2>
             {{with .Artist}}
                 {{range .Members}}
                     {{.}}<br>
@@ -76,7 +76,7 @@
         </div>
         <div class="separator"></div>
         <div class="middlebox">
-            <h2>Concert Dates and Locations</h2>
+            <h2>Date de Concert et Localisation</h2>
             {{with .Artist}}
                 {{range $key, $value := .Relations}}
                     {{$key}} : {{range $value}}

@@ -19,23 +19,23 @@
 
         <div class="searchBar">
             <form method="get" action="/">
-                <input class="search" type="text" placeholder="Search..." id="data" name="data" list="data-list" autocomplete="off">
+                <input class="search" type="text" placeholder="recherche..."id="data" name="data" list="data-list" autocomplete="off">
                 <datalist id="data-list">
                     {{with .Search}}
                         {{range .ArtistBandName}}
-                            <option value="{{.}} - Artist/Band"></option>
+                            <option value="{{.}} - Artist/Groupe"></option>
                         {{end}}
                         {{range .Members}}
-                            <option value="{{.}} - Member"></option>
+                            <option value="{{.}} - Membre"></option>
                         {{end}}
                         {{range .Location}}
-                            <option value="{{.}} - Location"></option>
+                            <option value="{{.}} - Localisation"></option>
                         {{end}}
                         {{range .CreationDate}}
-                            <option value="{{.}} - Creation Date"></option>
+                            <option value="{{.}} - Date de Création"></option>
                         {{end}}
                         {{range .FirstAlbumDate}}
-                            <option value="{{.}} - First Album Date"></option>
+                            <option value="{{.}} - Premier Album"></option>
                         {{end}}
                     {{end}}
                 </datalist>
@@ -43,7 +43,7 @@
         </div>
 
         <div class="menu">
-            <a href="/">Home</a>
+            <a href="/">Menu</a>
         </div>
     </div>
 </nav>
@@ -59,9 +59,9 @@
 </div>  
 {{if not .Artist}}
     <div class="noResult">
-        <h1>No result</h1>
-        There are no result for your research
-    </div>
+        <h1>Pas de résultat</h1>
+        Il n'y a pas de résultat pour votre recherche    
+</div>
 
 {{end}}
 </body>
